@@ -16,7 +16,7 @@ spec:
         readinessProbe:
           httpGet:
             path: /readyz
-            port: 5002
+            port: 5003
           perio  
   replicas: 2
   template:
