@@ -6,6 +6,18 @@ spec:
   selector:
     matchLabels:
       run: load-balancer-example
+    spec:
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 5001
+          initialDelaySeconds: 15
+          periodSeconds: 5
+        readinessProbe:
+          httpGet:
+            path: /readyz
+            port: 5001
+          perio  
   replicas: 2
   template:
     metadata:
